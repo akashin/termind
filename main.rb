@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 def read_lines(filepath)
     file = File.open(filepath)
     lines = []
@@ -12,10 +14,14 @@ def read_lines(filepath)
 end
 
 def main()
-    quotes_filepath = './data/quotes.txt'
+    if ARGV.size != 1
+        puts "Usage: termind <filename>"
+        return 1
+    end
+    quotes_filepath = ARGV[0]
     lines = read_lines(quotes_filepath)
     index = rand(lines.size)
-    puts lines[index]
+    print lines[index]
 end
 
 main()

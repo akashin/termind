@@ -1,2 +1,2 @@
 # termind
-MIndfulness in your terminal
+Mindfulness in your terminal

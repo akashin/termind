@@ -14,11 +14,14 @@ def read_lines(filepath)
 end
 
 def main()
-    if ARGV.size != 1
+    if ARGV.size > 1
         puts "Usage: termind <filename>"
         return 1
+    elsif ARGV.size == 1
+        quotes_filepath = ARGV[0]
+    else
+        quotes_filepath = File.dirname(__FILE__) + '/data/quotes.txt'
     end
-    quotes_filepath = ARGV[0]
     lines = read_lines(quotes_filepath)
     index = rand(lines.size)
     print lines[index]

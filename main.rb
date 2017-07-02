@@ -20,7 +20,8 @@ def main()
     elsif ARGV.size == 1
         quotes_filepath = ARGV[0]
     else
-        quotes_filepath = File.dirname(__FILE__) + '/data/quotes.txt'
+        quotes_filepath = File.join(File.dirname(__FILE__), 'data/quotes.txt')
+        puts quotes_filepath
     end
     lines = read_lines(quotes_filepath)
     index = rand(lines.size)
